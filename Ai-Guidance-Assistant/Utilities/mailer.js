@@ -23,7 +23,7 @@ try{
     return info
 }
 catch(error){
-console.error(error,"Mail errrorr")
+console.error("Mail errrorr",error.message)
 throw error
 }
 }

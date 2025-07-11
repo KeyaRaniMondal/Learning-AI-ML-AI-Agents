@@ -1,0 +1,23 @@
+create gemini api
+npm i -D nodemon(is a dev dependenci)
+bcrypt- password utility for hasing password
+cors
+dotenv
+express
+mongodb-mongoose
+nodemailer-for sending mail
+jwt
+
+
+for Ai Agent part
+inngest/Agentkit
+inngest
+
+core backend
+
+
+we want to register a user in mongodb
+send success email(user should be in databse)
+email function
+
+
