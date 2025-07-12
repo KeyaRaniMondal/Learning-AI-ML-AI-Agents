@@ -55,3 +55,18 @@ export const logOut = async (req, res) => {
         res.status(500).json({ error: "Logout failed", details: error.message })
     }
 }
+
+
+
+//For Update
+export const updateUser=async(req,res)=>{
+    const {skills=[],role,email}=req.body
+    try{
+if(require.user?.role!="admin"){
+    
+}
+    }
+    catch(error){
+
+    }
+}
