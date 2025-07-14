@@ -59,14 +59,23 @@ export const logOut = async (req, res) => {
 
 
 //For Update
-export const updateUser=async(req,res)=>{
-    const {skills=[],role,email}=req.body
-    try{
-if(require.user?.role!="admin"){
-    
-}
+export const updateUser = async (req, res) => {
+    const { skills = [], role, email } = req.body
+    try {
+        if (require.user?.role != "admin") {
+            return res.status(403).json({ error: "forbidden" })
+        }
+        const user = await User.findOne({ email })
+        if (!user)
+            return res.status(401).json({ error: "User not found" })
+        await User.updateOne(
+            { email },
+            { skills: skills.length ? skills : user.skills, role }
+        )
+        return res.json({ message: "User updated successfully" })
     }
-    catch(error){
+    catch (error) {
+        res.status(500).json({ error: "Logout failed", details: error.message })
+    }
 
-    }
 }
